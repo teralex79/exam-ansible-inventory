@@ -1,0 +1,7 @@
+- hosts: web 
+  roles:
+    - { role: web-app }
+
+- hosts: nginx
+  roles:
+    - { role: nginx }
