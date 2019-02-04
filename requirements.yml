@@ -1,8 +1,9 @@
 ---
 
-- src: git@github.com:teralex79/exam-ansible-docker-role.git
+- src: teralex79.exam_ansible_docker_role
   path: roles
   name: role_docker
+#git@github.com:teralex79/exam-ansible-docker-role.git
 
 - src: git@github.com:teralex79/exam-ansible-web-app-role.git
   path: roles

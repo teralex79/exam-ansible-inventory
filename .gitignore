@@ -1,3 +1,4 @@
 roles/
 *.retry
 .vault_pass
+*.swp
