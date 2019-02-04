@@ -1,8 +1,7 @@
 [all]
   [web]
-    192.168.56.105 ansible_user=root ansible_connection=ssh ansible_ssh_private_key_file=~/.ssh/deb1_rsa
-    192.168.56.106 ansible_user=root ansible_connection=ssh ansible_ssh_private_key_file=~/.ssh/deb1_rsa
-#    debian1 ansible_user=root ansible_connection=ssh ansible_ssh_private_key_file=~/.ssh/deb1_rsa
+    192.168.56.105 ansible_user=root ansible_connection=ssh ansible_ssh_private_key_file=~/.ssh/deb1_rsa docker_name=web_app_1
+    192.168.56.106 ansible_user=root ansible_connection=ssh ansible_ssh_private_key_file=~/.ssh/deb1_rsa docker_name=web_app_2
+    192.168.56.107 ansible_user=root ansible_connection=ssh ansible_ssh_private_key_file=~/.ssh/deb1_rsa docker_name=web_app_3
   [nginx]
-    192.168.56.101 ansible_user=root ansible_connection=ssh ansible_ssh_private_key_file=~/.ssh/deb1_rsa
-#    localhost ansible_connection=local
+    192.168.56.101 ansible_user=root ansible_connection=ssh ansible_ssh_private_key_file=~/.ssh/deb1_rsa docker_name=nginx_balancer
