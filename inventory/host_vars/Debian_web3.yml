@@ -1,0 +1,5 @@
+ansible_host: 192.168.56.105
+ansible_user: root
+ansible_ssh_private_key_file: ~/.ssh/deb1_rsa
+docker_app_port: 5003
+docker_name: web_app_3
