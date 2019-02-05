@@ -20,6 +20,7 @@ pipeline {
                        playbook: 'exam.yml',
                        inventory: 'inventory/hosts.yml',
                        credentialsId: 'ansible-playbook',
+                       sudo: 'true',
                        extras: '--vault-password-file .vault_pass')
           //      sh 'echo $ANSIBLE_VAULT_CREDS_PSW > .vault_pass'
           //      sh 'cat .vault_pass'
