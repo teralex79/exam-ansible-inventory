@@ -21,8 +21,9 @@ pipeline {
 //                                 inventory: 'inventory/hosts.yml', 
 //                                 playbook: 'exam.yaml', 
 //                                 vaultCredentialsId: 'ansible-vault-plugin')
-                withCredentials([file(credentialsId: 'ansible-vault-plugin', variable: ANSIBLE_VAULT_CREDS').
-                                 sshUserPrivateKey(credentialsId: 'ansible-playbook', variable: 'ANSIBLE_SSH_CREDS' )]) {
+
+                withCredentials([file(credentialsId: 'ansible-vault-plugin', variable: ANSIBLE_VAULT_CREDS',
+                                 sshUserPrivateKey(credentialsId: 'ansible-playbook', variable: 'ANSIBLE_SSH_CREDS')]) {
                     sh 'ansible-playbook exam.yml -i inventory/hosts.yml --vault-password-file $ANSIBLE_VAULT_CREDS --private-key $ANSIBLE_SSH_CREDS'   
                 }
             }
