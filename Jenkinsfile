@@ -23,7 +23,7 @@ pipeline {
           //             credentialsId: 'ansible-playbook',
           //             vaultCredentialsId: 'ansible-vault')
                 sh 'echo $ANSIBLE_VAULT_CREDS_PSW > .vault_pass'
-                sh 'ansible-playbook -i inventory/hosts.yml exam.yml --vault-password-file .vault'
+                sh 'ansible-playbook -i inventory/hosts.yml exam.yml --vault-password-file .vault_pass'
                 sh 'rm -f .vault_pass'
             }
         }
