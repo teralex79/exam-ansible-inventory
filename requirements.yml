@@ -3,12 +3,11 @@
 - src: teralex79.exam_ansible_docker_role
   path: roles
   name: role_docker
-#git@github.com:teralex79/exam-ansible-docker-role.git
 
-- src: git@github.com:teralex79/exam-ansible-web-app-role.git
+- src: teralex79.exam_ansible_web_app_role
   path: roles
   name: role_web_app
  
-- src: git@github.com:teralex79/exam-ansible-nginx-role.git
+- src: teralex79.exam_ansible_nginx_role
   path: roles
   name: role_nginx
