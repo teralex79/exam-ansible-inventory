@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         PATH = "/usr/local/bin:/usr/local/sbin:/home/jenkins/.local/bin:$PATH"
-        ANSIBLE_VAULT_CREDS = credentials(ansible-vault)
+        ANSIBLE_VAULT_CREDS = credentials('ansible-vault')
     }
 
     stages {
