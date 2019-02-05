@@ -16,15 +16,15 @@ pipeline {
 
         stage('Run ansible-playbook') {
             steps {
-          //         ansiblePlaybook(
-          //             playbook: 'exam.yml',
-          //             inventory: 'inventory/hosts.yml',
-          //             credentialsId: 'ansible-playbook',
-          //             vaultCredentialsId: 'ansible-vault')
+                   ansiblePlaybook(
+                       playbook: 'exam.yml',
+                       inventory: 'inventory/hosts.yml',
+                       credentialsId: 'ansible-playbook',
+                       extras: '--vault-password-file .vault_pass')
           //      sh 'echo $ANSIBLE_VAULT_CREDS_PSW > .vault_pass'
           //      sh 'cat .vault_pass'
           //      sh 'ansible-playbook -i inventory/hosts.yml exam.yml --vault-password-file .vault_pass'
-                sh 'sudo ansible-playbook -i inventory/hosts.yml exam.yml --vault-password-file .vault_pass' 
+          //      sh 'sudo ansible-playbook -i inventory/hosts.yml exam.yml --vault-password-file .vault_pass' 
           //      sh 'rm -f .vault_pass'
 
         //        withCredentials([file(credentialsId: 'ansible-vault', variable: 'ansibleVaultKeyFile')]) {
