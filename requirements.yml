@@ -2,12 +2,12 @@
 
 - src: teralex79.exam_ansible_docker_role
   path: roles
-  name: role_docker
+  name: docker
 
 - src: teralex79.exam_ansible_web_app_role
   path: roles
-  name: role_web_app
+  name: web_app
  
 - src: teralex79.exam_ansible_nginx_role
   path: roles
-  name: role_nginx
+  name: nginx
