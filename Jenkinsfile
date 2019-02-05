@@ -24,7 +24,7 @@ pipeline {
           //      sh 'echo $ANSIBLE_VAULT_CREDS_PSW > .vault_pass'
           //      sh 'cat .vault_pass'
           //      sh 'ansible-playbook -i inventory/hosts.yml exam.yml --vault-password-file .vault_pass'
-                sh 'ansible-playbook -i inventory/hosts.yml exam.yml' 
+                sh 'ansible-playbook -i inventory/hosts.yml exam.yml --vault-password-file .vault_pass' 
           //      sh 'rm -f .vault_pass'
 
         //        withCredentials([file(credentialsId: 'ansible-vault', variable: 'ansibleVaultKeyFile')]) {
