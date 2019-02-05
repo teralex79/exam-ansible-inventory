@@ -16,9 +16,9 @@ pipeline {
 
         stage('Run ansible-playbook') {
             steps {
-                   ansiblePlaybook(
-                       playbook: 'exam.yml',
-                       inventory: 'inventory/hosts.yml',
+        //           ansiblePlaybook(
+          //             playbook: 'exam.yml',
+            //           inventory: 'inventory/hosts.yml',
            //            credentialsId: 'ansible-playbook',
           //             sudo: 'true',
                        extras: '--vault-password-file .vault_pass')
@@ -28,13 +28,13 @@ pipeline {
           //      sh 'sudo ansible-playbook -i inventory/hosts.yml exam.yml --vault-password-file .vault_pass' 
           //      sh 'rm -f .vault_pass'
 
-        //        withCredentials([file(credentialsId: 'ansible-vault', variable: 'ansibleVaultKeyFile')]) {
-         //           ansiblePlaybook(
-         //               playbook: 'exam.yml',
-         //               inventory: 'inventory/hosts.yml',
-         //               credentialsId: 'ansible-playbook',
-          //              extras: "--vault-password-file ${ansibleVaultKeyFile}")
-           //     }
+                withCredentials([file(credentialsId: 'ansible-vault', variable: 'ansibleVaultKeyFile')]) {
+                    ansiblePlaybook(
+                        playbook: 'exam.yml',
+                        inventory: 'inventory/hosts.yml',
+                        credentialsId: 'ansible-playbook',
+                        extras: "--vault-password-file ${ansibleVaultKeyFile}")
+                }
             }
         }
     }
