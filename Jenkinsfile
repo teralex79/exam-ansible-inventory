@@ -16,7 +16,6 @@ pipeline {
 
         stage('Run ansible-playbook') {
             steps {
-           //        ansibleVault(action: 'encrypt', input: 'inventory/group_vars/web/vault.yml', vaultCredentialsId: 'ansible-vault')
           //         ansiblePlaybook(
           //             playbook: 'exam.yml',
           //             inventory: 'inventory/hosts.yml',
