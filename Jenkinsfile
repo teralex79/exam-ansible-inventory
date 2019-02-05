@@ -33,7 +33,7 @@ pipeline {
                         playbook: 'exam.yml',
                         inventory: 'inventory/hosts.yml',
                         credentialsId: 'ansible-playbook',
-                        extras: "--vault-password-file ${ansibleVaultKeyFile}")
+                        extras: '--vault-password-file ${ansibleVaultKeyFile}')
                 }
             }
         }
