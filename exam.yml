@@ -1,8 +1,7 @@
 ---
-remote user: root
-become: yes
-
 - hosts: web 
+  remote user: root
+  become: yes
   roles:
     - { role: web-app }
 
