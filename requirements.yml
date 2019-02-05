@@ -6,7 +6,7 @@
 
 - src: teralex79.exam_ansible_web_app_role
   path: roles
-  name: web_app
+  name: web-app
  
 - src: teralex79.exam_ansible_nginx_role
   path: roles
