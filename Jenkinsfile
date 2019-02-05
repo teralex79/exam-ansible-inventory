@@ -16,17 +16,12 @@ pipeline {
 
         stage('Run ansible-playbook') {
             steps {
-            //    sh 'echo $ANSIBLE_VAULT_CREDS_PSW > .vault_pass'
-            //    sh 'ansible-playbook -i inventory/hosts.yml exam.yml --vault-password-file .vault_pass'
-            //    sh 'rm -f .vault_pass'
-
-//                 ansibleVault(action: 'encrypt', input: 'inventory/group_vars/web/vault.yml', vaultCredentialsId: 'ansible-vault')
+           //        ansibleVault(action: 'encrypt', input: 'inventory/group_vars/web/vault.yml', vaultCredentialsId: 'ansible-vault')
                    ansiblePlaybook(
                        playbook: 'exam.yml',
                        inventory: 'inventory/hosts.yml',
-                       credentialsId: 'ansible-playbook')
-// ,
-//                       vaultCredentialsId: 'ansible-vault')
+                       credentialsId: 'ansible-playbook',
+                       vaultCredentialsId: 'ansible-vault')
             }
         }
     }
