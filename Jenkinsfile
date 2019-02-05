@@ -20,14 +20,11 @@ pipeline {
             //    sh 'rm -f .vault_pass'
 
 //                 ansibleVault(action: 'encrypt', input: 'inventory/group_vars/web/vault.yml', vaultCredentialsId: 'ansible-vault')
-                 ansiColor('xterm') {
-                     ansiblePlaybook(
-                         playbook: 'exam.yml',
-                         inventory: 'inventory/hosts.yml',
-                         credentialsId: 'ansible-playbook',
-                         vaultCredentialsId: 'ansible-vault',
-                         colorized: true)
-                 }
+                   ansiblePlaybook(
+                       playbook: 'exam.yml',
+                       inventory: 'inventory/hosts.yml',
+                       credentialsId: 'ansible-playbook',
+                       vaultCredentialsId: 'ansible-vault')
             }
         }
     }
