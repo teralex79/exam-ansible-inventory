@@ -1,5 +1,10 @@
 pipeline {
     agent any
+
+    environment {
+        PATH="/usr/local/bin:/usr/local/sbin:/home/jenkins/.local/bin:$PATH"
+    }
+
     stages {
         stage('Download roles') {
             steps {   
