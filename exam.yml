@@ -1,7 +1,11 @@
 - hosts: web 
+  remote user: root
+  become: yes
   roles:
     - { role: web-app }
 
 - hosts: nginx
-  roles:
+  remote user: root
+  become: yes
+   roles:
     - { role: nginx }
