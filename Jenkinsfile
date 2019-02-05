@@ -16,7 +16,11 @@ pipeline {
 
         stage('Run ansible-playbook') {
             steps {
-                ansiblePlaybook( colorized: true, credentialsId: 'ansible-playbook', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/hosts.yml', playbook: 'exam.yaml', vaultCredentialsId: 'ansible-vault-plugin')
+                ansiblePlaybook( credentialsId: 'ansible-playbook', 
+                                 disableHostKeyChecking: true, 
+                                 inventory: 'inventory/hosts.yml', 
+                                 playbook: 'exam.yaml', 
+                                 vaultCredentialsId: 'ansible-vault-plugin')
             }
         }
     }
