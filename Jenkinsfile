@@ -4,6 +4,7 @@ pipeline {
     environment {
         PATH = "/usr/local/bin:/usr/local/sbin:/home/jenkins/.local/bin:$PATH"
         ANSIBLE_VAULT_CREDS = credentials('ansible-vault')
+        ANSIBLE_SSH_CREDS = credentials('ansible-playbook')
     }
 
     stages {
@@ -23,8 +24,9 @@ pipeline {
                    ansiblePlaybook(
                        playbook: 'exam.yml',
                        inventory: 'inventory/hosts.yml',
-                       credentialsId: 'ansible-playbook',
-                       vaultCredentialsId: 'ansible-vault')
+                       credentialsId: 'ansible-playbook')
+// ,
+//                       vaultCredentialsId: 'ansible-vault')
             }
         }
     }
