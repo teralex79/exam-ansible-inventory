@@ -14,12 +14,12 @@ pipeline {
 
         stage('Run ansible-playbook') {
             steps {
-                withCredentials([sshUserPrivateKey(credentialsId: 'jenkins_slave_rsa',
+                withCredentials([sshUserPrivateKey(credentialsId: 'ansible_ssh',
                                                    keyFileVariable: 'SSH_KEY',
                                                    usernameVariable: 'USER'),
                                  file(credentialsId: 'ansible-vault-key',
                                       variable: 'VAULT_KEY_FILE')]) {
-                    sh 'ansible-playbook exam.yml -i inventory/hosts.yml  -e host_key_checking=False --vault-password-file ${VAULT_KEY_FILE} --private-key deb1_rsa'
+                    sh 'ansible-playbook exam.yml -i inventory/hosts.yml  -e host_key_checking=False --vault-password-file ${VAULT_KEY_FILE} --private-key ${SSH_KEY}'
                 }
             }
         }
