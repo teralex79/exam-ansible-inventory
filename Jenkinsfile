@@ -14,9 +14,7 @@ pipeline {
 
         stage('Run ansible-playbook') {
             steps {
-                script {
-                    ansiblePlaybook become: true, credentialsId: 'ansible_ssh', disableHostKeyChecking: true, installation: 'ansible', nventory: '/home/jenkins/workspace/Jenkins_CD/inventory/hosts.yml', playbook: '/home/jenkins/workspace/Jenkins_CD/exam.yaml', vaultCredentialsId: 'ansible-vault-key'
-                }
+                ansiblePlaybook become: true, credentialsId: 'ansible_ssh', disableHostKeyChecking: true, installation: 'ansible', nventory: '/home/jenkins/workspace/Jenkins_CD/inventory/hosts.yml', playbook: '/home/jenkins/workspace/Jenkins_CD/exam.yaml', vaultCredentialsId: 'ansible-vault-key'
             }
         }
     }
