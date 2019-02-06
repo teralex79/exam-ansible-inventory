@@ -1,12 +1,14 @@
 ---
-- Hosts: web 
+- name: Run web-app role
+  hosts: web 
   remote_user: root
   become: yes
   host_key_checking: false
   roles:
     - { role: web-app }
 
-- Hosts: nginx
+- name: Run nginx balancer role
+  hosts: nginx
   remote_user: root
   become: yes
   host_key_checking: false
