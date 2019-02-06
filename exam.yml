@@ -2,11 +2,13 @@
 - hosts: web 
   remote_user: root
   become: yes
+  host_key_checking: false
   roles:
     - { role: web-app }
 
 - hosts: nginx
   remote_user: root
   become: yes
+  host_key_checking: false
   roles:
     - { role: nginx }
