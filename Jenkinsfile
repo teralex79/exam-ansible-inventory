@@ -18,8 +18,8 @@ pipeline {
                                  credentialsId: 'ansible_ssh', 
                                  disableHostKeyChecking: true, 
                                  installation: 'ansible',
-                                 inventory: 'inventory/hosts.yml', 
-                                 playbook: 'exam.yaml', 
+                                 inventory: '/home/jenkins/workspace/Jenkins_CD/inventory/hosts.yml', 
+                                 playbook: '/home/jenkins/workspace/Jenkins_CD/exam.yaml', 
                                  vaultCredentialsId: 'ansible-vault-key')
 
             }
