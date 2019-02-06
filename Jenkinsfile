@@ -19,7 +19,7 @@ pipeline {
                                                    usernameVariable: 'USER'),
                                  file(credentialsId: 'ansible-vault-key',
                                       variable: 'VAULT_KEY_FILE')]) {
-                    sh 'ansible-playbook exam.yml -i inventory/hosts.yml  -e host_key_checking=False --vault-password-file .vault_pass --private-key deb1_rsa'
+                    sh 'ansible-playbook exam.yml -i inventory/hosts.yml  -e host_key_checking=False --vault-password-file ${VAULT_KEY_FILE} --private-key deb1_rsa'
                 }
             }
         }
