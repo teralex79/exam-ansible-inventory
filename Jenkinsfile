@@ -14,7 +14,13 @@ pipeline {
 
         stage('Run ansible-playbook') {
             steps {
-                ansiblePlaybook become: true, credentialsId: 'ansible_ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/home/jenkins/workspace/Jenkins_CD/inventory/hosts.yml', playbook: '/home/jenkins/workspace/Jenkins_CD/exam.yaml', vaultCredentialsId: 'ansible-vault-key'
+                withCredentials([sshUserPrivateKey(credentialsId: 'jenkins_slave_rsa',
+                                                   keyFileVariable: 'SSH_KEY',
+                                                   usernameVariable: 'USER'),
+                                 file(credentialsId: 'ansible-vault-key',
+                                      variable: 'VAULT_KEY_FILE')]) {
+                    sh 'ansible-playbook exam.yml -i inventory/hosts.yml -u ${USER} --vault-password-file ${VAULT_KEY_FILE} --private-key ${SSH_KEY}'
+                }
             }
         }
     }
