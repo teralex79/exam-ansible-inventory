@@ -27,7 +27,7 @@ pipeline {
         stage('Run integration test') {
             steps {
                 script {
-                    def responce = httpRequest( url: '192.168.56.101:5000', validResponseCodes: '200' )
+                    def responce = httpRequest( url: 'http://192.168.56.101:5000', validResponseCodes: '200' )
                     println("Status: "+response.status)
                     println("Content: "+response.content)
                 }
