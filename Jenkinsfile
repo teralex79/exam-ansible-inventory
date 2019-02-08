@@ -12,8 +12,8 @@ pipeline {
             }
         }
 
-//        stage('Run ansible-playbook') {
-//            steps {
+        stage('Run ansible-playbook') {
+            steps {
 //                withCredentials([sshUserPrivateKey(credentialsId: 'ansible_ssh',
 //                                                   keyFileVariable: 'SSH_KEY',
 //                                                   usernameVariable: 'USER'),
